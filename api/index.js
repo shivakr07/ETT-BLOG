@@ -1,6 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
+import userRoutes from './routes/user.route.js'
 
 dotenv.config()
 
@@ -17,3 +18,5 @@ mongoose
 }).catch( (error) => {
     console.log("some error while connecting to the db", error);
 })
+
+app.use('/api/user/', userRoutes)
